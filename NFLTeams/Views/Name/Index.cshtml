@@ -1,17 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model NFLTeams.Models.TeamListViewModel
+﻿@model NFLTeams.Models.TeamListViewModel
 
 <h2>Change User's Name</h2>
 
 <form asp-action="Change" method="post">
-    <input asp-for="@Model.UserName" placeholder="Type name here" class="mb-3" />
+    <div class="form-group">
+        <label for="UserName">Type name here:</label>
+        <input asp-for="UserName" class="form-control mb-3" placeholder="Type name here" />
+    </div>
 
     <!-- You can code a link to the Home page here if needed -->
 
     <button type="submit" class="btn btn-primary">Change Name</button>
 </form>
-
