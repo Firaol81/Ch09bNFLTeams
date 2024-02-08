@@ -11,7 +11,6 @@ namespace NFLTeams.Controllers
         {
             _session = session;
         }
-
         public IActionResult Index()
         {
             ViewBag.NFLSession = _session;
