@@ -24,8 +24,8 @@
                 var session = new NFLSession(Context.Session);
                 <h5 class="bg-info p-2">
                     @{
-                        var session = ViewBag.NFLSession as NFLSession;
-                        var userName = session?.GetUserName();
+                        var _session = ViewBag.NFLSession;
+                        var userName = _session?.GetUserName();
                     }
 
                     @if (!string.IsNullOrEmpty(userName))
@@ -34,7 +34,7 @@
                     }
                     else
                     {
-                        <span>@userName's Favorites Teams</span>
+                        <span>@userName My Favorites Teams</span>
                     }
 
                     <a asp-controller="Favorites" class="text-white">My Favorite Teams</a>

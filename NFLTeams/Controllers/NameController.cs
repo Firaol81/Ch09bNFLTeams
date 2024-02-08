@@ -23,6 +23,7 @@ namespace NFLTeams.Controllers
             };
             return View(viewModel);
         }
+
         [HttpPost]
         public RedirectToActionResult Change(TeamListViewModel model)
         {
