@@ -14,6 +14,8 @@ namespace NFLTeams.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.NFLSession = _session;
+
             string userName = _session.GetUserName();
 
             var viewModel = new TeamListViewModel
@@ -22,21 +24,15 @@ namespace NFLTeams.Controllers
             };
             return View(viewModel);
         }
-
-
         [HttpPost]
         public RedirectToActionResult Change(TeamListViewModel model)
         {
-            var session = new NFLSession(HttpContext.Session);
-            session.SetUserName(model.UserName);
+            _session.SetUserName(model.UserName);
             return RedirectToAction("Index", "Home", new
             {
-                ActiveConf = session.GetActiveConf(),
-                ActiveDiv = session.GetActiveDiv()
+                ActiveConf = _session.GetActiveConf(),
+                ActiveDiv = _session.GetActiveDiv()
             });
         }
-
-
-        // Add other action methods as needed
     }
 }
