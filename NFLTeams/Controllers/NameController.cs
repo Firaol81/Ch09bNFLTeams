@@ -5,7 +5,6 @@ namespace NFLTeams.Controllers
 {
     public class NameController : Controller
     {
-        private readonly NFLSession _session;
 
         public NameController(NFLSession session)
         {
