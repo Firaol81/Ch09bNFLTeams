@@ -27,7 +27,11 @@ namespace NFLTeams
 
             services.AddDbContext<TeamContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TeamContext")));
+
+            // Add the following line to register NFLSession
+            services.AddScoped<NFLSession>();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)

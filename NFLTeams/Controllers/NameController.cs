@@ -28,11 +28,13 @@ namespace NFLTeams.Controllers
         public RedirectToActionResult Change(TeamListViewModel model)
         {
             _session.SetUserName(model.UserName);
+
             return RedirectToAction("Index", "Home", new
             {
                 ActiveConf = _session.GetActiveConf(),
                 ActiveDiv = _session.GetActiveDiv()
             });
         }
+
     }
 }
